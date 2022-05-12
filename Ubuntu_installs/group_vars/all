@@ -1,0 +1,4 @@
+---
+ansible_cache_dir: /var/cache/ansible # Need to update references to ansible cache to use this variable
+username: "{{ lookup('env','USER') }}"
+
