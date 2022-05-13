@@ -5,3 +5,8 @@
   roles:
     - oh-my-zsh
     - kubectl
+    - kubectx
+    - stern
+    - docker
+    - minikube
+

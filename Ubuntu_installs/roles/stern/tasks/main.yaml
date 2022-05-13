@@ -1,0 +1,17 @@
+---
+- name: Clone stern repo
+  git:
+    repo: https://github.com/wercker/stern.git
+    dest: "{{ lookup('env','GOPATH') }}/src/github.com/wercker"
+    single_branch: yes
+    version: master
+
+- name: Go to the folder and execute command
+  command: govendor sync
+  args:
+    chdir: "{{ lookup('env','GOPATH') }}/src/github.com/wercker"
+
+- name: Go to the folder and execute command
+  command: go install
+  args:
+    chdir: "{{ lookup('env','GOPATH') }}/src/github.com/wercker"
